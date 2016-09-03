@@ -4,7 +4,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import { Documents } from '../documents'
 import { Document } from '../../../ui/components/document'
 import { rateLimit } from '../../../modules/rate-limit'
-import { generatePDF } from '../../../modules/server/generate-pdf'
+import { generateComponentAsPDF } from '../../../modules/server/generate-pdf'
 
 export const downloadPDF = new ValidatedMethod({
   name: 'documents.download',
@@ -14,7 +14,7 @@ export const downloadPDF = new ValidatedMethod({
   run({ documentId }) {
     const document = Documents.findOne({ _id: documentId })
     const fileName = `document_${document._id}.pdf`
-    return generatePDF({ component: Document, props: { document }, fileName })
+    return generateComponentAsPDF({ component: Document, props: { document }, fileName })
     .then((result) => result)
     .catch((error) => { throw new Meteor.Error('500', error) })
   },
