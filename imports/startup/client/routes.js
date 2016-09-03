@@ -25,7 +25,7 @@ Meteor.startup(() => {
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } onEnter={ requireAuth } />
-        <Route name="documents" path="/documents" component={ documents } />
+        <Route name="documents" path="/documents" component={ Documents } />
         <Route name="login" path="/login" component={ Login } />
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />

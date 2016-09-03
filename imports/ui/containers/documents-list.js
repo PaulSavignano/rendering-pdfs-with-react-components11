@@ -1,12 +1,12 @@
 import { composeWithTracker } from 'react-komposer'
-import { Documents } from '../../api/documents'
+import { Documents } from '../../api/documents/documents'
 import { DocumentsList } from '../components/documents-list'
 import { Loading } from '../components/loading'
 import { Meteor } from 'meteor/meteor'
 
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('documents')
-  if (subscription.read()) {
+  if (subscription) {
     const documents = Documents.find().fetch()
     onData(null, { documents })
   }

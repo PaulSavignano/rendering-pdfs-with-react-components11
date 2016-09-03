@@ -39,5 +39,6 @@ export const AddDocument = () => (
         placeholder="Type a document body."
       />
     </FormGroup>
+    <Button type="submit" bsStyle="success">Add Document</Button>
   </form>
 )
