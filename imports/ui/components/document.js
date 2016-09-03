@@ -4,8 +4,8 @@ import { Button, ListGroupItem } from 'react-bootstrap'
 import { Meteor } from 'meteor/meteor'
 import { Bert } from 'meteor/themeteorchef:bert'
 import fileSaver from 'file-saver'
-import { base64ToBlob } from '../../modules/base64-to-blob'
 import { removeDocument } from '../../api/documents/methods'
+import { base64ToBlob } from '../../modules/base64-to-blob'
 
 const handleDownloadPDF = (event) => {
   event.preventDefault()
