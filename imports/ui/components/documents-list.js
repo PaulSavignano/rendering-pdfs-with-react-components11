@@ -9,8 +9,8 @@ export const DocumentsList = ({ documents }) => (
     ))}
   </ListGroup> :
   <Alert bsStyle="warning">No documents yet.</Alert>
-);
+)
 
 DocumentsList.propTypes = {
   documents: React.PropTypes.array,
-};
+}
